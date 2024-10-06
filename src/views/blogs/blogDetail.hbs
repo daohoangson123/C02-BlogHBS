@@ -1,0 +1,37 @@
+<div class='container mt-5'>
+    <a href='/'>Blogs</a>
+    {{#each blogs}}
+        <div class='py-5 w3l-homeblock1 text-center'>
+            <div class='container mt-md-3'>
+                <div
+                    class='d-flex flex-wrap justify-content-center'
+                    style='gap: 20px;'
+                >
+                    <img src={{this.image}} alt='' />
+                    <h3 class='blog-desc-big text-center'>
+                        {{this.title}}
+                    </h3>
+                </div>
+                <div class='Blog'>
+                    <div class='blog-post-info'>
+                        <div class='author align-items-center mb-1'>
+                            <a href='author.html'>{{this.author}}</a>
+                        </div>
+                        <ul class='blog-meta'>
+                            <li class='meta-item blog-lesson'>
+                                <span class='meta-value'>
+                                    {{this.createdDate}}
+                                </span>
+                            </li>
+                            <li>
+                                <p class='meta-item blog-students'>
+                                    {{this.description}}
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>

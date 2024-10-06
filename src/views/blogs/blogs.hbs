@@ -1,0 +1,34 @@
+<div class='container mt-5'>
+    <a href='add-blog'>Add Blog</a>
+    <table class='table'>
+        <thead>
+            <tr>
+                <th scope='col'>#</th>
+                <th scope='col'>title</th>
+                <th scope='col'>author</th>
+                <th scope='col'>description</th>
+                <th scope='col'>createdDate</th>
+                <th scope='col'>image</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each blogs}}
+                <tr>
+                    <th scope='row'>{{this.id}}</th>
+                    <td>{{this.title}}</td>
+                    <td>{{this.author}}</td>
+                    <td>{{this.description}}</td>
+                    <td>{{this.createdDate}}</td>
+                    <td>
+                        <img src={{this.image}} alt='image' />
+                    </td>
+                    <td>
+                        <form action='/delete-blog/{{this.id}}'><button
+                            >DELETE</button></form>
+                        <a href='blog/{{this.id}}'>DETAILS</a>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

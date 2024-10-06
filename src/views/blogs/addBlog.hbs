@@ -1,0 +1,52 @@
+<form class='container mt-5' action='/api/blogs' method='POST'>
+    <div class='form-group'>
+        <label for='title'>title</label>
+        <input
+            type='text'
+            class='form-control'
+            id='title'
+            aria-describedby='emailHelp'
+            name='title'
+            required
+        />
+    </div>
+    <div class='form-group'>
+        <label for='description'>description</label>
+        <input
+            type='text'
+            class='form-control'
+            id='description'
+            aria-describedby='emailHelp'
+            name='description'
+            required
+        />
+    </div>
+    <div class='form-group'>
+        <label for='author'>author</label>
+        <input
+            type='text'
+            class='form-control'
+            id='author'
+            aria-describedby='emailHelp'
+            name='author'
+            required
+        />
+    </div>
+    <div class='form-group'>
+        <label for='image'>image</label>
+        <input
+            type='text'
+            class='form-control'
+            id='image'
+            aria-describedby='emailHelp'
+            name='image'
+        />
+    </div>
+    <button type='submit' class='btn btn-primary'>Submit</button>
+</form>
+
+<script>
+    const form = document.querySelector('form'); form.addEventListener('submit',
+    function(event) { event.preventDefault(); const formData = new
+    FormData(form); fetch('/api/blogs', { method: 'POST', body: formData }) })
+</script>
